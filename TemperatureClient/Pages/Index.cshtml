@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+    <form method="post">
+        <label for="inputTemp">Temperature:</label>
+        <input type="number" asp-for="InputValue">
+        <br>
+        Convert from: 
+        <select asp-for="InputUnit">
+            <option hidden> --------</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celcius">Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <label for="convertedTemp">to:</label>
+        <select asp-for="ConvertedUnit">
+            <option hidden> --------</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celcius">Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+    <br>
+    <h3>@Model.ConvertedValue @Model.ConvertedUnit</h3>
